@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "C:/Users/ignac/project_1/project_1.runs/impl_1/top.tcl"
+  variable script "C:/Users/ignac/Downloads/tp1_alu-main/tp1_alu-main/tp1_alu.runs/impl_1/top.tcl"
   variable category "vivado_impl"
 }
 
@@ -97,7 +97,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
@@ -107,9 +106,10 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 2
-  set_param runs.launchOptions { -jobs 4  }
+  set_param xicom.use_bs_reader 1
+  set_param runs.launchOptions { -jobs 8  }
   open_checkpoint top_routed.dcp
-  set_property webtalk.parent_dir C:/Users/ignac/project_1/project_1.cache/wt [current_project]
+  set_property webtalk.parent_dir C:/Users/ignac/Downloads/tp1_alu-main/tp1_alu-main/tp1_alu.cache/wt [current_project]
 set_property TOP top [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }
