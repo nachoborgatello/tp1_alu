@@ -21,7 +21,7 @@ Operaciones soportadas:
 | AND | 100100 | AND bit a bit |
 | OR  | 100101 | OR bit a bit |
 | XOR | 100110 | XOR bit a bit |
-| SLL | 000011 | Desplazamiento izquierda |
+| SRA | 000011 | Desplazamiento izquierda |
 | SRL | 000010 | Desplazamiento derecha |
 | NOR | 100111 | NOR bit a bit |
 
@@ -46,5 +46,3 @@ Los resultados de la ALU se muestran en los LEDs.
 
 ## 🧪 Simulación
 Las pruebas se realizaron mediante **Testbench** en **Vivado**, verificando todas las operaciones aritméticas y lógicas definidas.
-
----
